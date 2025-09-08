@@ -142,6 +142,34 @@
             </div>
         </section>
 
+        <!-- Case Study 4: Tamil Nadu -->
+        <section class="card mb-8 border-l-4 border-purple-500">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-2 text-blue-700">Case Study 4: Tamil Nadu's Renewable Energy Push </h2>
+            <h3 class="text-xl font-semibold text-purple-600">SDG 7 - Clean Energy</h3>
+            <div class="mt-4 space-y-4">
+                <p class="font-semibold">Problem:</p>
+                <p class="text-gray-700 pl-4">Rapidly increasing energy demand and reliance on conventional sources.</p>
+                <p class="font-semibold">Solution:</p>
+                <ul class="list-disc pl-8 text-gray-700 space-y-1">
+                    <li>Aggressive state-level policies and incentives for renewable energy.</li>
+                    <li>Investment in large-scale solar farms and wind power projects.</li>
+                    <li>Diversification of the energy grid to include clean sources.</li>
+                </ul>
+                <p class="font-semibold">Results:</p>
+                <ul class="list-disc pl-8 text-gray-700 space-y-1">
+                    <li>Tamil Nadu became a leader in renewable energy generation in India.</li>
+                    <li>Reduced dependence on thermal power plants.</li>
+                    <li>Growth of green jobs in solar and wind power sectors.</li>
+                </ul>
+            </div>
+
+            <!-- Pie Chart for Tamil Nadu's Renewable Energy Mix -->
+            <div class="mt-8">
+                <h3 class="text-xl font-semibold text-purple-600 mb-4 text-center">Renewable Energy Mix</h3>
+                <div id="tamilnadu-pie-chart" class="flex justify-center"></div>
+            </div>
+        </section>
+
         <!-- How Goals Connect Section -->
         <section class="card mb-8 bg-blue-100">
             <h2 class="text-2xl sm:text-3xl font-bold mb-4 text-blue-700">How Goals Connect</h2>
@@ -272,7 +300,17 @@
                 .domain(koreaData.map(d => d.label))
                 .range(["#3B82F6", "#E5E7EB"]);
             drawPieChart("#korea-pie-chart", koreaData, koreaColor);
+
+            // Data for Tamil Nadu's Renewable Energy
+            const tamilnaduData = [
+                { label: "Solar and Wind", value: 40 },
+                { label: "Conventional", value: 60 }
+            ];
+            const tamilnaduColor = d3.scaleOrdinal()
+                .domain(tamilnaduData.map(d => d.label))
+                .range(["#8B5CF6", "#E5E7EB"]);
+            drawPieChart("#tamilnadu-pie-chart", tamilnaduData, tamilnaduColor);
         });
     </script>
 </body>
-</html>
+                                                                                                                         </html>
