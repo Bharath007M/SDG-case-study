@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDG Goals 7, 8, and 9</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .card {
+            background-color: white;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        h1, h2, h3 {
+            font-weight: 700;
+        }
+        h1 {
+            color: #1f2937;
+        }
+        .sdg-header {
+            color: #4b5563;
+        }
+        .chart-container {
+            width: 100%;
+            max-width: 400px;
+            margin: 2rem auto;
+        }
+    </style>
+</head>
+<body class="p-8 md:p-12">
+
+    <header class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl text-blue-800 mb-4">Case Study: SDG Goals 7, 8, and 9</h1>
+        <p class="text-xl md:text-2xl text-gray-600">Clean Energy, Decent Work, and Innovation</p>
+    </header>
+
+    <main class="max-w-4xl mx-auto">
+
+        <section class="card">
+            <h2 class="text-2xl md:text-3xl text-blue-700 mb-4">Introduction</h2>
+            <p class="text-gray-700">This case study examines three key Sustainable Development Goals:</p>
+            <ul class="list-disc list-inside mt-4 space-y-2 text-gray-600">
+                <li><span class="font-semibold text-blue-600">SDG 7</span>: Affordable and Clean Energy</li>
+                <li><span class="font-semibold text-blue-600">SDG 8</span>: Decent Work and Economic Growth</li>
+                <li><span class="font-semibold text-blue-600">SDG 9</span>: Industry, Innovation and Infrastructure</li>
+            </ul>
+        </section>
+
+        <!-- Case Study 1: India -->
+        <section class="card">
+            <h2 class="text-2xl md:text-3xl text-green-700 mb-4">Case Study 1: India's Solar Program</h2>
+            <h3 class="text-xl md:text-2xl font-semibold sdg-header mb-4">SDG 7 - Clean Energy</h3>
+            <p class="text-gray-700"><strong>Problem</strong>: 400 million Indians without electricity in 2014.</p>
+            <p class="text-gray-700 mt-2"><strong>Solution</strong>:</p>
+            <ul class="list-disc list-inside mt-2 space-y-2 text-gray-600">
+                <li>Built world's largest solar parks</li>
+                <li>Subsidized rooftop solar panels</li>
+                <li>Bulk procurement to reduce costs</li>
+            </ul>
+            <p class="text-gray-700 mt-4"><strong>Results</strong>:</p>
+            <ul class="list-disc list-inside mt-2 space-y-2 text-gray-600">
+                <li>Solar capacity: 3 GW to 50 GW (2014-2022)</li>
+                <li>99.5% household electrification</li>
+                <li>100,000+ renewable energy jobs created</li>
+            </ul>
+            
+            <div class="chart-container">
+                <h4 class="text-center font-bold mb-2">Household Electrification Rate</h4>
+                <canvas id="indiaChart"></canvas>
+                <p class="text-xs text-center text-gray-500 mt-2">Percentage of households with access to electricity.</p>
+            </div>
+        </section>
+
+        <!-- Case Study 2: Germany -->
+        <section class="card">
+            <h2 class="text-2xl md:text-3xl text-red-700 mb-4">Case Study 2: Germany's Apprenticeship System</h2>
+            <h3 class="text-xl md:text-2xl font-semibold sdg-header mb-4">SDG 8 - Decent Work</h3>
+            <p class="text-gray-700"><strong>Problem</strong>: High youth unemployment and skills shortage.</p>
+            <p class="text-gray-700 mt-2"><strong>Solution</strong>:</p>
+            <ul class="list-disc list-inside mt-2 space-y-2 text-gray-600">
+                <li>Students work 3-4 days in companies, 1-2 days in school</li>
+                <li>350 recognized job training programs</li>
+                <li>Apprentices earn while learning</li>
+            </ul>
+            <p class="text-gray-700 mt-4"><strong>Results</strong>:</p>
+            <ul class="list-disc list-inside mt-2 space-y-2 text-gray-600">
+                <li>Youth unemployment only 7% (EU average: 15%)</li>
+                <li>68% of apprentices hired by training companies</li>
+                <li>Strong skilled workforce supporting manufacturing</li>
+            </ul>
+            
+            <div class="chart-container">
+                <h4 class="text-center font-bold mb-2">Youth Employment Rate</h4>
+                <canvas id="germanyChart"></canvas>
+                <p class="text-xs text-center text-gray-500 mt-2">Comparison of youth employment in Germany vs EU average.</p>
+            </div>
+        </section>
+
+        <!-- Case Study 3: South Korea -->
+        <section class="card">
+            <h2 class="text-2xl md:text-3xl text-yellow-700 mb-4">Case Study 3: South Korea's Digital Infrastructure</h2>
+            <h3 class="text-xl md:text-2xl font-semibold sdg-header mb-4">SDG 9 - Innovation and Infrastructure</h3>
+            <p class="text-gray-700"><strong>Problem</strong>: Poor internet connectivity in 1990s.</p>
+            <p class="text-gray-700 mt-2"><strong>Solution</strong>:</p>
+            <ul class="list-disc list-inside mt-2 space-y-2 text-gray-600">
+                <li>Massive fiber-optic network investment</li>
+                <li>Government digitalization of services</li>
+                <li>Tech startup support programs</li>
+            </ul>
+            <p class="text-gray-700 mt-4"><strong>Results</strong>:</p>
+            <ul class="list-disc list-inside mt-2 space-y-2 text-gray-600">
+                <li>95% broadband coverage (world's highest)</li>
+                <li>Digital economy: 8% of GDP</li>
+                <li>Global tech companies (Samsung, LG)</li>
+            </ul>
+            
+            <div class="chart-container">
+                <h4 class="text-center font-bold mb-2">Broadband Coverage Rate</h4>
+                <canvas id="koreaChart"></canvas>
+                <p class="text-xs text-center text-gray-500 mt-2">Percentage of population with broadband access.</p>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2 class="text-2xl md:text-3xl text-blue-700 mb-4">How Goals Connect</h2>
+            <ul class="list-disc list-inside mt-4 space-y-2 text-gray-600">
+                <li><strong>Energy + Jobs</strong>: Solar industry created manufacturing and installation jobs.</li>
+                <li><strong>Infrastructure + Growth</strong>: Digital networks enabled e-commerce and the tech sector.</li>
+                <li><strong>Innovation + Energy</strong>: Technology advances reduced renewable energy costs.</li>
+            </ul>
+        </section>
+        
+        <section class="card">
+            <h2 class="text-2xl md:text-3xl text-blue-700 mb-4">Key Success Factors</h2>
+            <ul class="list-decimal list-inside mt-4 space-y-2 text-gray-600">
+                <li><strong>Government Leadership</strong>: Strong policy and consistent investment.</li>
+                <li><strong>Public-Private Partnership</strong>: Government vision + private efficiency.</li>
+                <li><strong>Skills Training</strong>: Prepare workers for new industries.</li>
+                <li><strong>Long-term Vision</strong>: 10-15 year commitment needed.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2 class="text-2xl md:text-3xl text-blue-700 mb-4">Recommendations</h2>
+            <h3 class="text-xl md:text-2xl font-semibold sdg-header mb-4">Start With:</h3>
+            <ul class="list-disc list-inside mt-2 space-y-2 text-gray-600">
+                <li>Basic infrastructure (electricity, internet).</li>
+                <li>Vocational training for local industries.</li>
+                <li>Incentives for clean energy investment.</li>
+            </ul>
+            <h3 class="text-xl md:text-2xl font-semibold sdg-header mt-6 mb-4">For Success:</h3>
+            <ul class="list-disc list-inside mt-2 space-y-2 text-gray-600">
+                <li>Set clear national targets.</li>
+                <li>Link education to job market needs.</li>
+                <li>Learn from successful countries.</li>
+            </ul>
+        </section>
+        
+        <section class="card">
+            <h2 class="text-2xl md:text-3xl text-blue-700 mb-4">Conclusion</h2>
+            <p class="text-gray-700">India, Germany, and South Korea show that clean energy, decent work, and innovation work best together. Countries addressing all three simultaneously see faster progress than those focusing on individual goals.</p>
+            <p class="text-gray-700 mt-4">Key insight: Infrastructure enables innovation, clean energy creates jobs, and skilled workers drive growth.</p>
+        </section>
+
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // India Chart: Household Electrification
+            const indiaCtx = document.getElementById('indiaChart').getContext('2d');
+            new Chart(indiaCtx, {
+                type: 'pie',
+                data: {
+                    labels: ['Electrified (99.5%)', 'Not Electrified (0.5%)'],
+                    datasets: [{
+                        data: [99.5, 0.5],
+                        backgroundColor: ['#3B82F6', '#6B7280'],
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                font: { size: 14, family: 'Inter' }
+                            }
+                        },
+                        title: { display: false }
+                    }
+                }
+            });
+
+            // Germany Chart: Youth Unemployment
+            const germanyCtx = document.getElementById('germanyChart').getContext('2d');
+            new Chart(germanyCtx, {
+                type: 'pie',
+                data: {
+                    labels: ['German Youth Unemployment (7%)', 'EU Average (15%)'],
+                    datasets: [{
+                        data: [7, 15],
+                        backgroundColor: ['#FBBF24', '#EF4444'],
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                font: { size: 14, family: 'Inter' }
+                            }
+                        },
+                        title: { display: false }
+                    }
+                }
+            });
+
+            // South Korea Chart: Broadband Coverage
+            const koreaCtx = document.getElementById('koreaChart').getContext('2d');
+            new Chart(koreaCtx, {
+                type: 'pie',
+                data: {
+                    labels: ['Broadband Coverage (95%)', 'No Coverage (5%)'],
+                    datasets: [{
+                        data: [95, 5],
+                        backgroundColor: ['#10B981', '#6B7280'],
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                font: { size: 14, family: 'Inter' }
+                            }
+                        },
+                        title: { display: false }
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
